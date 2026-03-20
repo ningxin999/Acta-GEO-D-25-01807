@@ -1,0 +1,129 @@
+\usepackage[utf8]{inputenc} 
+\usepackage{fullpage}
+\usepackage{times}
+\usepackage[normalem]{ulem}
+\usepackage{fancyhdr,graphicx,amsmath,amssymb, mathtools, scrextend, titlesec, enumitem}
+\setlength{\headheight}{14.49998pt}
+\usepackage{bm}
+\usepackage{tcolorbox}
+\usepackage{amsthm}
+\usepackage{mathrsfs} 
+\usepackage{multicol} 
+\usepackage[acronym,nomain,nonumberlist]{glossaries}
+
+
+\makeglossaries
+
+\usepackage{siunitx}
+\setlist[itemize]{itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt, left=0pt}
+
+
+%cross and mark
+\usepackage{bbding}
+
+% package subfigure
+\usepackage{caption}
+\usepackage{subcaption}
+
+% tikz
+\usepackage{tikz}
+\newcommand{\tikzmark}[1]{\tikz[baseline,remember picture] \coordinate (#1) {};}
+%line numbering
+\usepackage{lineno}
+\linenumbers
+% \usepackage[dvipdfmx]{graphicx} 
+% \usepackage{bmpsize}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+
+\usepackage{amsfonts}
+\numberwithin{equation}{section}
+\ifnum\classstyle=3
+\else
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{remark}{Remark}[section]
+\fi
+\newtheorem{problem}{Problem}[section]
+%\theoremstyle{definition}
+\newtheorem{example}{Example}[section]
+\newtheorem{assumption}{Assumption}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+
+\ifnum\classstyle=3
+\else
+\usepackage[hypertexnames=false]{hyperref}
+\hypersetup{
+    colorlinks = true,
+    linkbordercolor = {white},
+    linkcolor = {blue!50!black},
+%linkcolor [red]
+%anchorcolor [black]
+citecolor     = {blue!50!black},
+%pdfborder={0 0 0}
+%filecolor [cyan]
+%menucolor [red]
+%runcolor [cyan - same as file color]
+%urlcolor [magenta]
+}
+\fi
+
+%\usepackage{units} % Nicefrac
+
+\usepackage{xcolor,colortbl}
+
+\usepackage{nicematrix}
+
+
+\usepackage{algorithm}
+%\counterwithin{algorithm}{chapter}
+\usepackage{algpseudocode}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\newcommand{\tabitem}{\textbullet~~}
+\algrenewcommand\algorithmicindent{2.0em}
+\newcommand{\IndState}{\State\hspace{2em}}
+\usepackage{tikz}
+\usepackage{pdfpages}
+
+% \usepackage{easy-todo} 
+
+\usepackage{chngcntr}
+
+\counterwithin{figure}{section}
+
+%figure numbering
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thefigure}{\arabic{figure}}
+
+% \newtheorem{proposition}{Proposition}
+% \newtheorem{corollary}{Corollary}
+\usepackage{ulem}
+
+
+\usepackage{yhmath}
+
+% for double hat
+\usepackage{accents}
+\newlength{\dhatheight}
+\newcommand{\doublehat}[1]{%
+    \settoheight{\dhatheight}{\ensuremath{\hat{#1}}}%
+    \addtolength{\dhatheight}{-0.35ex}%
+    \hat{\vphantom{\rule{1pt}{\dhatheight}}%
+    \smash{\hat{#1}}}}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\newcommand{\apprxd}{\,{\buildrel d \over \approx}\,}
+\newcommand{\equald}{\,{\buildrel d \over =}\,}
+
+% Fix Subjclass 2020 bug, dunno what causes it here 
+\makeatletter
+\@namedef{subjclassname@2020}{%
+  \textup{2020} Mathematics Subject Classification}
+\makeatother

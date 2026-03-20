@@ -1,0 +1,93 @@
+\pdfoutput=1
+\newcommand{\online}{0}
+\newcommand{\classstyle}{1}
+\documentclass[12pt]{article}
+\input{packages}
+\usepackage{arxiv}
+
+% \usepackage[backend=biber,
+% style=apa,
+% sorting = nyt, citestyle=authoryear,sortcites = false, uniquename=false,uniquelist=false]{biblatex}
+% \usepackage[backend=biber,
+% style=numeric-comp,
+% sorting = none, citestyle=numeric,sortcites = false, uniquename=false,uniquelist=false]{biblatex}
+\usepackage[backend=biber,
+style=numeric-comp,
+sorting = nyt, citestyle=numeric,sortcites = false, uniquename=false,uniquelist=false,maxnames = 99,giveninits=true]{biblatex}
+\addbibresource{ref.bib}
+\DeclareNameAlias{default}{family-given}
+
+
+
+
+\usepackage{cleveref}
+\usepackage{setspace}
+%\doublespacing
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+
+
+% Load title, keywords and meta data
+\input{info}
+
+\usepackage{setspace}
+
+
+\input{titlepage}
+
+
+
+\begin{document}
+\doublespacing
+\maketitle
+
+
+\begin{abstract}
+\input{abstract}
+\end{abstract}
+
+
+\input{00_acronym}
+\input{01_Introduction.tex}
+\input{02_ingredients.tex}
+%\input{03_ComputationalDetails.tex}
+\input{04_Numerics.tex}
+\input{Problem2.tex}
+% \input{05_Limitation.tex}
+\input{06_Conclusion}
+\input{07_code_availability.tex}
+%\input{08-acknowledgement}
+%\input{acronym}
+
+
+\clearpage
+\newpage
+
+\ifnum\classstyle=0
+\printbibliography
+\fi
+\ifnum\classstyle=1
+\printbibliography
+\fi
+\ifnum\classstyle=2
+\printbibliography
+\fi
+\ifnum\classstyle=3
+\printbibliography
+\fi
+
+\newpage
+\appendix
+
+\ifnum\online=0
+%\input{09_Appendix}
+\fi
+\ifnum\online=1
+%do nothing
+\fi
+
+
+
+
+
+\end{document}
